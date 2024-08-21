@@ -10,3 +10,6 @@
 [submodule "products-microservice"]
 	path = products-microservice
 	url = git@github.com:nest-ms-kv/products-microservice.git
+[submodule "payments-microservice"]
+	path = payments-microservice
+	url = git@github.com:nest-ms-kv/payments-microservice.git
