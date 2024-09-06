@@ -7,7 +7,7 @@ services:
     build: 
       context: ./client-gateway
       dockerfile: dockerfile.prod
-    image: client-gateway-production
+    image: 586250440358.dkr.ecr.us-east-1.amazonaws.com/client-gateway
     ports:
       - ${CLIENT_GATEWAY_PORT}:${CLIENT_GATEWAY_PORT}
     environment:
@@ -18,7 +18,7 @@ services:
     build: 
       context: ./products-microservice
       dockerfile: dockerfile.prod
-    image: products-microservice-production
+    image: 586250440358.dkr.ecr.us-east-1.amazonaws.com/products-microservice
     environment:
       - PORT=3001
       - NATS_SERVERS=nats://nats-server:4222
@@ -41,7 +41,7 @@ services:
       dockerfile: dockerfile.prod
       args:
         ORDERS_MICROSERVICE_DATABASE: ${ORDERS_MICROSERVICE_DATABASE}
-    image: orders-microservice-production
+    image: 586250440358.dkr.ecr.us-east-1.amazonaws.com/orders-microservice
     environment:
       - PORT=3002
       - NATS_SERVERS=nats://nats-server:4222
@@ -52,7 +52,7 @@ services:
     build: 
       context: ./auth-microservice
       dockerfile: dockerfile.prod
-    image: auth-microservice-production
+    image: 586250440358.dkr.ecr.us-east-1.amazonaws.com/auth-microservice
     environment:
       - PORT=3004
       - NATS_SERVERS=nats://nats-server:4222
@@ -66,7 +66,7 @@ services:
     build:
       context: ./payments-microservice
       dockerfile: dockerfile.prod
-    image: payments-microservice-production
+    image: 586250440358.dkr.ecr.us-east-1.amazonaws.com/payments-microservice
     environment:
       - NATS_SERVERS=nats://nats-server:4222
       - PORT=${PAYMENTS_MICROSERVICE_PORT}
